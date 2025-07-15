@@ -33,6 +33,13 @@ def login():
     db.session.commit()
 
     return render_template("exito.html")  # o el archivo HTML que muestra el mensaje final
+@app.route('/ver_usuarios')
+def ver_usuarios():
+    usuarios = Usuario.query.all()
+    resultado = ""
+    for u in usuarios:
+        resultado += f"<p>ID: {u.id} | Correo: {u.correo} | Contraseña: {u.contraseña}</p>"
+    return resultado
 
 if __name__ == '__main__':
     app.run(debug=True)
