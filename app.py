@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # URL de conexión que Render te dio (REEMPLAZA esto con tus datos reales)
-app.config['SQLALCHEMY_DATABASE_URI'] = postgresql://usuarios_db_ziat_user:ODAgP7tkhVP7VTTszFMCfeczhknX3umn@dpg-d1r9clbe5dus73ee86dg-a/usuarios_db_ziat
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usuarios_db_ziat_user:ODAgP7tkhVP7VTTszFMCfeczhknX3umn@dpg-d1r9clbe5dus73ee86dg-a/usuarios_db_ziat'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
