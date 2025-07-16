@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
 
-# URL de conexión que Render te dio (REEMPLAZA esto con tus datos reales)
+# Conexión a la base de datos (reemplaza con tus propios datos reales)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usuarios_db_ziat_user:ODAgP7tkhVP7VTTszFMCfeczhknX3umn@dpg-d1r9clbe5dus73ee86dg-a/usuarios_db_ziat'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -15,8 +15,8 @@ class Usuario(db.Model):
     correo = db.Column(db.String(120))
     contraseña = db.Column(db.String(120))
 
-@app.before_first_request
-def crear_tabla():
+# Crear la tabla directamente al iniciar
+with app.app_context():
     db.create_all()
 
 @app.route('/')
@@ -43,6 +43,5 @@ def ver_usuarios():
     return resultado
 
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
