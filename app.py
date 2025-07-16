@@ -40,10 +40,8 @@ def ver_usuarios():
     resultado = ""
     for u in usuarios:
         resultado += f"<p>ID: {u.id} | Correo: {u.correo} | Contraseña: {u.contraseña}</p>"
- 
- 
- 
-   return resultado
+    return resultado
+
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
